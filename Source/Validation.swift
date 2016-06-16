@@ -200,7 +200,7 @@ extension Request {
         - returns: The request.
     */
     public func validate() -> Self {
-        let acceptableStatusCodes: CountableRange<Int> = 200..<300
+        let acceptableStatusCodes: Range<Int> = 200..<300
         let acceptableContentTypes: [String] = {
             if let accept = request?.valueForHTTPHeaderField("Accept") {
                 return accept.componentsSeparatedByString(",")
